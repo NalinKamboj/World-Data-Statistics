@@ -21,7 +21,7 @@ var materialColors = [
   "#ffb74d"
 ];
 var selectedPoly;
-
+var counter = 0;
 // initData();
 loadJSON("GET", "data/mortalityData2.json")
   .then(function(response) {
@@ -91,24 +91,6 @@ function drawMap() {
   hoverState.properties.fill = mapChart.colors.getIndex(4);
 
   polygonTemplate.events.on("hit", function(event) {
-    // if (lastSelected) {
-    //   lastSelected.isActive = false;
-    // }
-    // if (lastSelected !== event.target) {
-    //   lastSelected = event.target;
-    //   //var data = getCountryData(event.target.dataItem._dataContext.id);
-    //   // console.log(data);
-    //   //Add new country's data to line chart
-    //   //toggleLineSeries(data);
-    // }
-    // console.log("ID " + event.target.dataItem._dataContext.id);
-    // console.log(event.target.isActive);
-
-    // if (event.target.isActive == false) {
-    //   event.target.isActive = true;
-    // } else {
-    //   event.target.isActive = false;
-    // }
     target = event.target;
     target.isActive = target.isActive;
     var id = target.dataItem.dataContext.id;
@@ -215,6 +197,7 @@ function createLineChart() {
   lifeAxis.strictMinMax = true;
 
   lineChart.cursor = new am4charts.XYCursor();
+  lineChart.legend = new am4charts.Legend();
 }
 
 function getCountryData(code) {
@@ -270,7 +253,9 @@ function toggleLineSeries(code) {
   seriesBullets.stroke = am4core.color("#333333");
 
   //Set random color to lineseries
-  var color = materialColors[Math.floor(Math.random() * materialColors.length)];
+  // var color = materialColors[Math.floor(Math.random() * materialColors.length)];
+  var color = materialColors[counter];
+  counter = (counter + 1) % materialColors.length;
   newSeries.stroke = am4core.color(color);
   seriesBullets.fill = am4core.color(color);
   // newSeries.tooltipText = "{year}: {value}";
