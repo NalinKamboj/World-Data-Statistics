@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+  <script src="//www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+  <script src="main.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    #mapdiv {
+      width: 100%;
+      height: 600px;
+    }
+    #map_slider {
+      float: right;
+      width: 90%;
+      height: 40px;
+    }
+    #year_text {
+      width: 10%;
+      float: left;
+      font-family: sans-serif;
+      font-size: 3.6rem;
+      font-weight: bold;
+      color: gray;
+      height: 40px;
+      padding-top: 5px;
+    }
+    h1 {
+      font-family: sans-serif;
+      font-size: 2em;
+      color: gray;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    #line_chart {
+      margin-top: 60px;
+      width: 100%;
+      height: 700px;
+    }
+    section {
+      background: #ffffff;
+    }
+    body {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+      background-color: #ffffff;
+    }
+  </style>
+  <title>World Bank Statistics</title>
+  <body>
+    <h1>World Bank Statistics Visualized - Life Expectancy at Birth</h1>
+    <div id="mapdiv"></div>
+    <div id="year_details">
+      <div id="year_text">
+        1960
+      </div>
+      <div id="map_slider"></div>
+    </div>
+    <div id="line_chart"></div>
+  </body>
+</head>
