@@ -188,6 +188,7 @@ function createLineChart() {
   yearAxis.max = 2016;
   yearAxis.renderer.minGridDistance = 40;
   yearAxis.strictMinMax = true;
+  yearAxis.numberFormatter.numberFormat = "####";
 
   lifeAxis = lineChart.yAxes.push(new am4charts.ValueAxis());
   lifeAxis.title.text = "[bold]Life Expectancy at Birth[/]";
